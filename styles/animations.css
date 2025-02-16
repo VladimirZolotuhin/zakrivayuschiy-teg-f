@@ -37,12 +37,12 @@
 
 .heart_core {
   fill: transparent;
-  transition: fill 0.3s ease-in, fill 0.3s 0.03s ease-out;
+  transition: fill 0.3s linear 0.03s;
 }
 
 .heart_body {
   fill: transparent;
-  transition: fill 0.3s ease-out;
+  transition: fill 0.3s linear;
 }
 
 .heart_sparks {
@@ -51,34 +51,41 @@
 
 .like-icon:hover .heart_core {
   fill: var(--like-icon-color-contour, black);
+  transition: fill 0.3s linear;
 }
 
 .like-icon:active .heart_core {
   fill: var(--like-icon-color-main, #ff0000);
+  transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .heart_core {
   fill: var(--like-icon-color-main, #ff0000);
+  transition: fill 0.3s linear;
 }
 
 .like-icon:hover .heart_body {
   fill: var(--like-icon-color-contour, black);
-  transition: fill 0.3s 0.05s ease-in;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon:active .heart_body {
   fill: var(--like-icon-color-main, #ff0000);
-  transition: fill 0.3s 0.05s ease-in;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .heart_body {
   fill: var(--like-icon-color-main, #ff0000);
-  transition: fill 0.3s 0.05s ease-in;
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon .contour {
+  transition: fill 0.1s linear;
 }
 
 .like-icon.is-liked .contour {
   fill: var(--like-icon-color-main, #ff0000);
-  transition: fill 0.3s 0.06s ease-in;
+  transition: fill 0.3s linear 0.06s;
 }
 
 .like-icon.is-liked .heart {
@@ -89,14 +96,12 @@
   animation: sparkle 0.3s ease-in 0.3s;
 }
 
-.button_animation:focus-visible {
-  box-shadow: 2px 2px 0px var(--border-color, #000000);
+.button_animation {
   transition: box-shadow 0.3s ease;
 }
 
-.button_animation:hover {
-  background-color: black;
-  transition: background-color 5s;
+.button_animation:focus-visible {
+  box-shadow: 2px 2px 0px var(--border-color, #000000);
 }
 
 .button_animation::after {
